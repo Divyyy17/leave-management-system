@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\LeaveRequest;
 
 class User extends Authenticatable
 {
@@ -19,9 +20,10 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+    'name',
+    'email',
+    'role',
+    'password',
     ];
 
     /**
@@ -46,4 +48,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function leaveRequests()
+{
+    return $this->hasMany(LeaveRequest::class);
+}
 }
