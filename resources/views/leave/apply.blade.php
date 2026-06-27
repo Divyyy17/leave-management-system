@@ -37,13 +37,15 @@
                 </div>
 
                 <div class="mb-4">
+                    
                     <label class="block mb-1">Start Date</label>
 
-                    <input
-                        type="date"
-                        name="start_date"
-                        class="w-full border rounded p-2"
-                    >
+                                <input
+                    type="date"
+                    name="end_date"
+                    min="{{ now()->toDateString() }}"
+                    class="w-full border rounded p-2"
+                >
 
                     @error('start_date')
                         <p class="text-red-500">{{ $message }}</p>
