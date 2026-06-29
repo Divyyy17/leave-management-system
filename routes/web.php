@@ -29,7 +29,6 @@ Route::middleware(['auth'])->group(function () {
     // Leave system (IMPORTANT: NAMED ROUTES)
     Route::get('/leave/apply', [LeaveController::class, 'create'])->name('leave.apply');
     Route::post('/leave/apply', [LeaveController::class, 'store'])->name('leave.store');
-
     Route::get('/my-leaves', [LeaveController::class, 'myLeaves'])->name('leave.my');
 });
 
